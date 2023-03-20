@@ -1,10 +1,12 @@
 import sys
 
-len = len(sys.argv)
-i = 2
-tmp = sys.argv[1][::-1].swapcase()
-while i < len:
-    tmp += ' '
-    tmp += sys.argv[i][::-1].swapcase()
-    i += 1
-print(tmp)
+len = len(sys.argv) - 1
+# tmp = sys.argv[len][::-1].swapcase()
+tmp = ''
+if len == 1:
+    while len > 0:
+        tmp += sys.argv[len][::-1].swapcase()
+        len -= 1
+        if len != 0:
+            tmp += ' '
+    print(tmp)
